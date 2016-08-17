@@ -22,6 +22,12 @@
 
 $subname: "Model Suburbia Council";
 
+$linkflairs: (
+	active: #2fa864,
+	complete: #336699,
+	failed: #d73c63,
+);
+
 // ====================================
 // BEGIN THEME CODE: ADVENTURER BEWARE!
 // ====================================
@@ -141,6 +147,28 @@ $subname: "Model Suburbia Council";
 }
 .submit.mod-override .morelink a::after {
 	margin-top: 2px; // Fix positioning of the mod shield
+}
+
+// Post flairs
+.linkflairlabel {
+	border-radius: 20px;
+	font-weight: bold;
+	padding: 2px 10px;
+	transition: all 0.3s ease 0s;
+	border: none;
+	
+	color: #ffffff;
+	background-color: #222222;
+}
+@each $linkflair, $colour in $linkflairs {
+	.linkflair-#{$linkflair} .title > .linkflairlabel,
+	.flairoptionpane .linkflair-#{$linkflair} .linkflairlabel,
+	.linkflair-#{$linkflair} .search-result-header .linkflairlabel {
+		background-color: $colour;
+		&:hover {
+			background-color: lighten($colour, 5%);
+		}
+	}
 }
 
 // Images
