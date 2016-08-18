@@ -149,6 +149,33 @@ $linkflairs: (
 	margin-top: 2px; // Fix positioning of the mod shield
 }
 
+// Post entries
+body:not(.comments-page) div.content .entry, .search-result > div {
+	border-bottom: 1px solid #e1e1e1;
+	padding: 13px;
+}
+
+.search-result {
+	// No margins required since we pad it out
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.link {
+	margin-bottom: 0;
+	
+	&.last-clicked {
+		border: none; // Override ugly default border
+	}
+	
+	.midcol, .thumbnail {
+		margin-top: 10px; // Line up better with increased padding
+	}
+	.rank {
+		margin-top: 10px + 15px; // From Reddit CSS
+	}
+}
+
 // Post flairs
 .linkflairlabel {
 	border-radius: 20px;
