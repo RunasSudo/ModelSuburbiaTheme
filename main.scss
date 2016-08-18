@@ -48,6 +48,10 @@ $linkflairs: (
 	}
 }
 
+body {
+	background-color: #eeeeee;
+}
+
 // The top header
 #sr-header-area {
 	background-color: #30323c;
@@ -149,8 +153,34 @@ $linkflairs: (
 	margin-top: 2px; // Fix positioning of the mod shield
 }
 
+// Sidebar
+.side {
+	border-radius: 4px;
+	padding: 15px;
+	margin: 15px;
+	border: 1px solid #e1e1e1;
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.08);
+}
+
+// Main content
+div.content {
+	border-radius: 4px;
+	margin: 15px (300px + 4 * 15px) 15px 15px;
+	border: 1px solid #e1e1e1;
+	background-color: #ffffff;
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.08);
+	
+	body:not(.comments-page):not(.listing-page) & {
+		padding: 15px;
+	}
+}
+
+body.listing-page .content .spacer {
+	margin-bottom: 0; // Unnecessary with padding
+}
+
 // Post entries
-body:not(.comments-page) div.content .entry, .search-result > div {
+.linklisting .entry, .search-result > div {
 	border-bottom: 1px solid #e1e1e1;
 	padding: 13px;
 }
@@ -174,6 +204,19 @@ body:not(.comments-page) div.content .entry, .search-result > div {
 	.rank {
 		margin-top: 10px + 15px; // From Reddit CSS
 	}
+}
+
+.res .entry {
+	transition: all .1s ease;
+}
+.RES-keyNav-activeElement {
+	border-left: 3px solid #336699;
+	padding-left: 15px;
+}
+
+// Comment pages
+.child .comment, .commentarea .child .thing {
+	border: none !important;
 }
 
 // Post flairs
